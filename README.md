@@ -1,2 +1,2 @@
 # chatgpt-nodejs
- messing with openAI api
+ messing with openai API
