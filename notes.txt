@@ -1,0 +1,10 @@
+03/28/23
+  after creating the folder
+    create a package.json file: npm init -y
+    install openAI: npm install openai
+    we need to install dot EnV package, we wil use it to create a DOT EnV file which will store our openAI api key. We do not want to store the key in our node code directly. It is a matter of security.
+      install dot EnV: npm install dotenv --save
+    create index.js and env: 
+
+    In the env file:
+      we have to bring in an environment variable: OPENAI_API_KEY="";
