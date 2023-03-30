@@ -8,3 +8,18 @@
 
     In the env file:
       we have to bring in an environment variable: OPENAI_API_KEY="";
+
+ 03/29/23
+   ok... I could not get the apikey to work. I kept getting an error: Invalid api key. After some troubleshooting:
+     OPENAI_API_KEY="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";
+     OPENAI_API_KEY=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
+
+     the second one was correct. I had the ";" at the end of the key and it was adding that as the key. I found this out by just adding the key directly to the code instead of using the .env file.
+     I have the prompt working in the cmd prompt. I just need to fix this error with the "require" so I can use the console on the browser.
+
+    Use a bundler like webpack or parcel
+      npm install -g parcel-bundler
+    
+    Ok. so I shouldnt make api calls to OpenAI directly -or anything directly- from the client side browser. It is not recommended. It will expose your api key. I need to make the api call from a server side
+    environment -my computer- nodejs. I have to create a server.js -a node server- use a library -express- to handle the api call. Then use the client side JS to display the results.
+     install express: npm install express
