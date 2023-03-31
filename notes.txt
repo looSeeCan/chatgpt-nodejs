@@ -23,3 +23,24 @@
     Ok. so I shouldnt make api calls to OpenAI directly -or anything directly- from the client side browser. It is not recommended. It will expose your api key. I need to make the api call from a server side
     environment -my computer- nodejs. I have to create a server.js -a node server- use a library -express- to handle the api call. Then use the client side JS to display the results.
      install express: npm install express
+
+03/30/23
+  also installed: cors and nodemon. Went back to the "coding with kevin" project to help me out.
+  so I ran into some minor coding issues that I should not of had a problem with. but I kind of did this tutorial a little sloppy so I was all over the place.
+  In summary:
+    openaiApi.js
+      this API utility file handles communication with the OpenAI API. This file is responsible fro setting up the OpenAI API configuration, defining the "runCompletion" function and exporting the function so that it can be used by other
+      parts of your application. The asynchronous function has an asynchronous operation that makes a request to the openAI API with the specified arguments.
+    build the server
+      the server has an asynchronous route handler: app.post. it used to be a get route where I could use the browser to access the url: http://localhost:5000 and see the data from the openaiApi.js file, but you can only access get routes
+      in this mannor, not post routes. The post route: its primary function is to handle data sent by your client-side application, process it and send back a response.
+      the route handler accepts an argument in the form of a question from the client side code and passes it in to the runCompletion() function, which returns a value in the form fo the response from openai.
+    fetchDataFromSerer.js
+      this utility file is responsible for fetching the data from the server.js file. The function in the file has an HTTP Post request operation using fetch API.
+    app.js
+      the app.js file is responsible for client side code which renders the form on the browser.
+      When the submit button is clicked the question is passed as an argument to the fetchDataFromServer function, which uses the HTTP Post resquest to pass the question to the router handler in server.js. The rourte
+      handler passes the argument -question- to the runCompletion() funciton in the API utility file operAPI.js where it is processsed thru openAI. Which gets returned back to the app.js file and renders to the browser
+      so basically:
+        app.js > fetchDataFromSerer.js > server.js > openaiApi.js 
+      

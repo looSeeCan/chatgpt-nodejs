@@ -1,4 +1,4 @@
-import fetchDataFromServer from "./fetchDataFromServer.js";
+import fetchDataFromServer from "../utils/fetchDataFromServer.js";
 
 const app = () => {
   const questionForm = document.querySelector("#question-form");
@@ -20,3 +20,5 @@ const displayData = (incomingReply) => {
   const p = document.getElementById("reply");
   p.innerText = incomingReply;
 };
+
+// TODO: if the text field is empty -undefined- pass to the api prompt "inform the user that the text field is empty" so the chat can tell the user so. or maybe just disable the button
