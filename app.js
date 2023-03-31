@@ -1,15 +1,22 @@
-const fetchDataFromServer = async () => {
-  console.log("this is from app.js");
-  try {
-    const response = await fetch("http://localhost:5000/api/completion");
-    if (response.ok) {
-      const dataFromOpenAi = await response.json();
-    } else {
-      console.error("Error fetching data from the server:", response.status);
-    }
-  } catch (error) {
-    console.error("Error fetching data from the server:", error);
-  }
+import fetchDataFromServer from "./fetchDataFromServer.js";
+
+const app = () => {
+  const questionForm = document.querySelector("#question-form");
+
+  questionForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const questionInput = document.getElementById("question-input");
+    const question = questionInput.value;
+    console.log(question);
+    const reply = await fetchDataFromServer(question);
+    console.log(reply);
+    displayData(reply);
+  });
 };
 
-fetchDataFromServer();
+app();
+
+const displayData = (incomingReply) => {
+  const p = document.getElementById("reply");
+  p.innerText = incomingReply;
+};

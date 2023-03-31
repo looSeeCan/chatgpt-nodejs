@@ -7,12 +7,14 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-async function runCompletion() {
+async function runCompletion(question) {
+  console.log("this:", question);
   const completion = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: "Hello, My name is Lucycan Ly?",
+    prompt: question,
   });
   console.log(completion.data.choices[0].text);
+  return completion.data.choices[0].text;
 }
 
 module.exports = runCompletion;
