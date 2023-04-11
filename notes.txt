@@ -12,7 +12,7 @@
  03/29/23
    ok... I could not get the apikey to work. I kept getting an error: Invalid api key. After some troubleshooting:
      OPENAI_API_KEY="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";
-     OPENAI_API_KEY=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
+     OPENAI_API_KEY=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 NOTE*** these api keys has been changed!!!
 
      the second one was correct. I had the ";" at the end of the key and it was adding that as the key. I found this out by just adding the key directly to the code instead of using the .env file.
      I have the prompt working in the cmd prompt. I just need to fix this error with the "require" so I can use the console on the browser.
