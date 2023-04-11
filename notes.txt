@@ -42,5 +42,8 @@
       When the submit button is clicked the question is passed as an argument to the fetchDataFromServer function, which uses the HTTP Post resquest to pass the question to the router handler in server.js. The rourte
       handler passes the argument -question- to the runCompletion() funciton in the API utility file operAPI.js where it is processsed thru openAI. Which gets returned back to the app.js file and renders to the browser
       so basically:
-        app.js > fetchDataFromSerer.js > server.js > openaiApi.js 
+        app.js > fetchDataFromSerer.js > server.js > openaiApi.js
+
+04/03/23
+  My response was coming back false. I had to sign up for billing.
       
