@@ -72,10 +72,23 @@
     -from installing Babel.....
       update package.json
         "scripts": {
+          "build": "NODE_ENV=production webpack"
           "build": "webpack",
           "start-client": "webpack serve",
           "start-server": "nodemon server.js",
           "test": "echo \"Error: no test specified\" && exit 1"
         }
+
+        had a warning: The mode option has not been set. Setting the mode helps Webpack apply the appropriate optimizations and settings for the specified environment.
+          added in webpack.config.js
+            mode: process.env.NODE_ENV === "production" ? "production" : "development",
+          added in package.json
+            "build:" "NODE_ENV=production webpack"
+              the warining went away but when i run build I am getting: "NODE_ENV" is not recognized as an internal or external command,
+                so the syntax only works with unix based systems (macOs and linux). I had to: npm install --save-dev cross-env and add to the "build":
+                  "build": "cross-env NODE_ENV=production webpack"
+                  
+
+          
 
     
