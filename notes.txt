@@ -58,4 +58,24 @@
     I relocated my utils directory inside my src directory and I had some issues with the path in the openaiApi.js file. I guess the syntax of the path stays the same no matter where I move the file
 
   I'm making a dist folder to try to understand the build process.
+    without a build process in place, your client-side code will be served directly, without any compilation, minification, or bundling. This approach migh be sufficient for simple prosjects with plain html, css,
+    and Js projects, but for bigger projects it could lead to compatibility issues.
+
+    setup a build process using webpack. install webpack and its dependecies: npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
+    create a webpack.config.js file in the root directory and configure it: This configuration sets up a simple build process for your project. It bundles your JS files, transpiles modern JS syntax for better
+    browser compatibility, and automatically injects the bundled JS file into your "index.html"
+
+    install Babel its dependecies to transpile modern JS syntax for better browser compatibility: npm install --save-dev @babel/core @babel/preset-env babel-loader
+    04/12/23
+    The website is not functioning properly when accessd from another machine. It works fine on my machine where I have my project open. I am not sure if it's realted to not having a build process. Im going to 
+    continue with this build process and see if that is the issue.
+    -from installing Babel.....
+      update package.json
+        "scripts": {
+          "build": "webpack",
+          "start-client": "webpack serve",
+          "start-server": "nodemon server.js",
+          "test": "echo \"Error: no test specified\" && exit 1"
+        }
+
     
