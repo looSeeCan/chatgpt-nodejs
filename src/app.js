@@ -1,4 +1,4 @@
-import fetchDataFromServer from "../utils/fetchDataFromServer.js";
+import fetchDataFromServer from "./utils/fetchDataFromServer.js";
 import displayData from "./displayData.js";
 
 const app = () => {

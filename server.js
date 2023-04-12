@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const runCompletion = require("./utils/openaiApi.js");
+const runCompletion = require("./src/utils/openaiApi.js");
 const app = express();
 const port = 5000;
 
