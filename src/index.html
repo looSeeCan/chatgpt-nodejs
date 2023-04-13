@@ -2,14 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
     <title>OpenAI API</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
       <form id="question-form">
+        <label for="question-input">Comment/Question:</label>
         <input
           type="text"
           id="question-input"
@@ -17,11 +27,17 @@
         />
         <button type="submit">Submit</button>
       </form>
-    </div>
-    <br />
-    <div class="container">
-      <p id="reply"></p>
-    </div>
-    <script type="module" src="./app.js"></script>
+
+      <section id="reply">
+        <h2>Answer:</h2>
+        <p></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 LooSeeCan. All rights reserved.</p>
+    </footer>
+
+    <script src="../dist/bundle.js"></script>
   </body>
 </html>
