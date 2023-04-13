@@ -48,4 +48,47 @@
 
 04/03/23
   My response was coming back false. I had to sign up for billing.
-      
+
+04/11/23
+  Im ready to deploy this on git hub pages, but just a quick summary since my last note^:
+    created displayData.js to display the ui. and to do some text to speach.
+    I finally had to do some security fixes with the .env file.
+
+  I have my project published. Good. but I have some hierarchy issues. I dont think I need to reconfigure my hierarchy, but I am going to:
+    I relocated my utils directory inside my src directory and I had some issues with the path in the openaiApi.js file. I guess the syntax of the path stays the same no matter where I move the file
+
+  I'm making a dist folder to try to understand the build process.
+    without a build process in place, your client-side code will be served directly, without any compilation, minification, or bundling. This approach migh be sufficient for simple prosjects with plain html, css,
+    and Js projects, but for bigger projects it could lead to compatibility issues.
+
+    setup a build process using webpack. install webpack and its dependecies: npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
+    create a webpack.config.js file in the root directory and configure it: This configuration sets up a simple build process for your project. It bundles your JS files, transpiles modern JS syntax for better
+    browser compatibility, and automatically injects the bundled JS file into your "index.html"
+
+    install Babel its dependecies to transpile modern JS syntax for better browser compatibility: npm install --save-dev @babel/core @babel/preset-env babel-loader
+    04/12/23
+    The website is not functioning properly when accessd from another machine. It works fine on my machine where I have my project open. I am not sure if it's realted to not having a build process. Im going to 
+    continue with this build process and see if that is the issue.
+    -from installing Babel.....
+      update package.json
+        "scripts": {
+          "build": "NODE_ENV=production webpack"
+          "build": "webpack",
+          "start-client": "webpack serve",
+          "start-server": "nodemon server.js",
+          "test": "echo \"Error: no test specified\" && exit 1"
+        }
+
+        had a warning: The mode option has not been set. Setting the mode helps Webpack apply the appropriate optimizations and settings for the specified environment.
+          added in webpack.config.js
+            mode: process.env.NODE_ENV === "production" ? "production" : "development",
+          added in package.json
+            "build:" "NODE_ENV=production webpack"
+              the warining went away but when i run build I am getting: "NODE_ENV" is not recognized as an internal or external command,
+                so the syntax only works with unix based systems (macOs and linux). I had to: npm install --save-dev cross-env and add to the "build":
+                  "build": "cross-env NODE_ENV=production webpack"
+                  
+
+          
+
+    
