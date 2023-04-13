@@ -9,7 +9,8 @@ const displayData = async (incomingReply) => {
 
   /// fill the window speech. if this step is not done. you get an empty array
   await waitForVoicesToLoad();
-  ///
+  ///filter the voices and select a voice. //TODO: this needs work. there is supposed to be a filter, but, i just hardcoded the value of the voices array.
+  /// I may eventually use a voice api anyways
   setVoicesForUtterance(utterance, "en-US");
   window.speechSynthesis.speak(utterance);
 };
