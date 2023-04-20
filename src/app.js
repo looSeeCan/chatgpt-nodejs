@@ -22,5 +22,4 @@ const app = () => {
 
 app();
 
-// TODO: if the text field is empty -undefined- pass to the api prompt "inform the user that the text field is empty" so the chat can tell the user so. or maybe just disable the button
 //TODO: cnage the voice
