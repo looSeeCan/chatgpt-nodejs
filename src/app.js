@@ -23,3 +23,8 @@ const app = () => {
 app();
 
 //TODO: cnage the voice
+console.log("hello");
+
+test('function sayHello returns "Hello, world!"', () => {
+  expect(sayHello()).toBe("Hello, world!");
+});
